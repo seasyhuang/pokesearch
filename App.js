@@ -3,16 +3,37 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Platform } from 'react-native';
 
 import Landing from './src/Landing';
+import Search from './src/Search';
 
+export default class App extends React.Component {
+  state = {
+    currentScreen: "landing"
+  }
+  switchScreen = (currentScreen) => {
+    this.setState({ currentScreen });
+  }
+  renderScreen = () => {
+    if(this.state.currentScreen === "landing"){
+      return(
+        <Landing switchScreen = { this.switchScreen } />
+      )
+    }
+    else if(this.state.currentScreen === "search"){
+      return(
+        // <Search switchScreen = { this.switchScreen } />
+        <Search />
+      )
+    }
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        { this.renderScreen() }
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Landing/>
-      
-      <StatusBar style="auto" />
-    </View>
-  );
+        <StatusBar style="auto" />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
