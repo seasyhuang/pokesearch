@@ -5,6 +5,9 @@ import { StyleSheet, Text, View, ImageBackground, Platform } from 'react-native'
 import Landing from './src/Landing';
 import Search from './src/Search';
 
+// import { Logs } from 'expo'
+// Logs.enableExpoCliLogging()
+
 export default class App extends React.Component {
   state = {
     // currentScreen: "landing"
