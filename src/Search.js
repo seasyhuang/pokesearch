@@ -1,7 +1,7 @@
 // rcd
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground } from 'react-native'
 import { Header, Item, Icon, Input, Button } from 'native-base';
 // https://docs.nativebase.io/Components.html#header-def-headref
 
@@ -12,7 +12,7 @@ import SearchBody from './SearchBody';
 class Search extends React.Component {
   state = {
     pokeSearch: "",
-    onCall: false
+    onCall: true
   }
   searchPoke = () => {
 
