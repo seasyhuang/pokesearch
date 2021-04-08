@@ -17,15 +17,20 @@ import SearchBody from './SearchBody';
 class Search extends React.Component {
   state = {
     pokeSearch: "",
-    onCall: true
+    onCall: true,
+    data: {},
   }
   searchPoke = () => {
     // when it's loading, show the PokeLoader screen (logic is in renderBody)
-    this.setState({ oncall: false });
-    console.log(this.state.pokeSearch);
+    this.setState({ oncall: true });
+    var self = this;
     axios.get("https://pokeapi.co/api/v2/pokemon/" + this.state.pokeSearch.toLowerCase())
       .then(function (response) {
-        console.log(response.data);
+        self.setState({ data: response.data });
+        self.setState({ onCall: false });
+      })
+      .catch(function (error){
+        console.log(error);
       })
   }
   renderBody = () => {
@@ -35,7 +40,7 @@ class Search extends React.Component {
       )
     } else {
       return(
-        <SearchBody />
+        <SearchBody data={ this.state.data } />
       )
     }
   }
