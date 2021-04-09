@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Platform } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 
 import Landing from './src/Landing';
 import Search from './src/Search';
