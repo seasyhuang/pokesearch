@@ -22,7 +22,7 @@ class Landing extends React.Component{
                   block={true}
                   style={styles.buttonStyle}
                   onPress={() => this.props.switchScreen("search")}
-                >
+              >
                 <Text style={styles.buttonText}>Start Searching</Text>
               </Button>
             </View>

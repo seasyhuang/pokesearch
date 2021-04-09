@@ -44,6 +44,11 @@ class Search extends React.Component {
       )
     }
   }
+  handleEnterKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      this.searchPoke()
+    }
+  }
   render () {
     return (
       <View style={{ flex: 1 }}>
@@ -55,6 +60,7 @@ class Search extends React.Component {
               value={ this.state.pokeSearch }
               placeholder="Search Pokemon"
               onChangeText={ (pokeSearch) => this.setState({ pokeSearch }) }
+              onKeyPress={ this.handleEnterKeyPress }
               />
             <Icon name='ios-search' onPress={ this.searchPoke } />
           </Item>
